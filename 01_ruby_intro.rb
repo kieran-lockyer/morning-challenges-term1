@@ -18,3 +18,12 @@
 #     2. 3 / 2.0
 #     3. 4 ** 2.0
 #     4. 4.1 % 2
+
+irb_1 = 24 * 365
+irb_2 = 60 * 24 * 365 * 10
+birth_date = Time.new(1987,03,29)
+irb_3 = Time.now.to_i - birth_date.to_i
+
+puts "There are #{irb_1} hours in a year."
+puts "There are #{irb_2} minutes in a decade."
+puts "I am #{irb_3} seconds old."
