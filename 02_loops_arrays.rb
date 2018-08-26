@@ -21,3 +21,37 @@
 # water sell for $6, and cost $0.15 to make
 
 # print out the total profit for the orders you have
+
+commute_time = 50
+commute_desc = "I took the bus to class and it took me 50 minutes."
+puts commute_desc
+
+drinks = ["cocktails", "waters", "beers"]
+quantity = [3, 2, 6]
+cost = [8, 3, 0.15]
+price = [22, 12, 6]
+
+print "What drink would you like: "
+choice = gets.chomp
+case choice
+when "cocktail"
+    quantity[drinks.index("cocktails")] += 1
+when "water"
+    quantity[drinks.index("waters")] += 1
+when "beer"
+    quantity[drinks.index("beers")] += 1
+end
+
+drinks.each do |drink|
+    puts "#{quantity[drinks.index(drink)]} #{drink}"
+end
+
+profit = 0
+
+3.times do |x|
+    profit += quantity[x] * price[x] - quantity[x] * cost[x]
+end
+    
+puts "Total profit is $#{profit}"
+
+
