@@ -51,9 +51,7 @@ end
 profit = 0
 
 3.times do |x|
-    profit += quantity[x] * price[x] - quantity[x] * cost[x]
+    profit += quantity[x] * (price[x] - cost[x])
 end
     
-puts "Total profit is $#{profit}"
-
-
+puts "Total profit is $#{profit.round(2)}"
