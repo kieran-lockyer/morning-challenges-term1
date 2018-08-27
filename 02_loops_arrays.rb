@@ -40,6 +40,8 @@ when "water"
     quantity[drinks.index("waters")] += 1
 when "beer"
     quantity[drinks.index("beers")] += 1
+else
+    puts "We only serve cocktails, beer or water."
 end
 
 drinks.each do |drink|
