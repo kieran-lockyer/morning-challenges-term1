@@ -28,8 +28,8 @@ puts commute_desc
 
 drinks = ["cocktails", "waters", "beers"]
 quantity = [3, 2, 6]
-cost = [8, 3, 0.15]
-price = [22, 12, 6]
+cost = [8, 0.15, 3]
+price = [22, 6, 12]
 
 print "What drink would you like: "
 choice = gets.chomp
@@ -51,7 +51,8 @@ end
 profit = 0
 
 3.times do |x|
+    puts "Profit for #{drinks[x]} is #{quantity[x]} * (#{price[x]} - #{cost[x]}) = #{quantity[x] * (price[x] - cost[x])}"
     profit += quantity[x] * (price[x] - cost[x])
 end
     
-puts "Total profit is $#{profit.round(2)}"
+puts "Total profit is $#{"%.2f" % profit}"
