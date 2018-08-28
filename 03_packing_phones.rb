@@ -58,6 +58,7 @@ phoneDimensions.permutation.each do |item|
 end
 
 puts phones
+puts "Maximum number of phones you can pack is #{phones.values.max}."
 
 
 
