@@ -54,7 +54,7 @@ phoneDimensions.permutation.each do |item|
         phones_height -= 1
         break
     end
-    phones["#{phoneWidth}, #{phoneLength}, #{phoneHeight}"] = phones_height * phones_length * phones_width
+    phones["Width: #{phoneWidth}, Length: #{phoneLength}, Height: #{phoneHeight}"] = phones_height * phones_length * phones_width
 end
 
 puts phones
