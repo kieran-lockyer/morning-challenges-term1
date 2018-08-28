@@ -20,3 +20,46 @@
 #    through all the commands you need to write. 
 #
 #    Keep it as simple as you can.
+
+#set box dimensions
+boxWidth = 32
+boxLength = 43
+boxHeight = 22.1
+
+#phone dimesions
+phoneDimensions = [5, 7.4, 4]
+
+#set no of phones that can fit
+phones = Hash.new
+#set best score
+max_phones = 0
+
+phoneDimensions.permutation.each do |item|
+    phoneWidth, phoneLength, phoneHeight = item[0], item[1], item[2]
+    while true
+        phones_width = 0
+        phones_length = 0
+        phones_height = 0
+        while phones_width * phoneWidth <= boxWidth
+            phones_width += 1
+        end
+        phones_width -= 1
+        while phones_length * phoneLength <= boxLength
+            phones_length += 1
+        end
+        phones_length -= 1
+        while phones_height * phoneHeight <= boxHeight
+            phones_height += 1
+        end
+        phones_height -= 1
+        break
+    end
+    phones["#{phoneWidth}, #{phoneLength}, #{phoneHeight}"] = phones_height * phones_length * phones_width
+end
+
+puts phones
+
+
+
+
+
