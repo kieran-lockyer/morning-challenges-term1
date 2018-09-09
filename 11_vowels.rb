@@ -14,6 +14,21 @@
 # ruby tests/04_vowels_test.rb
 #
 
-def vowels (string)
-  # Your code here
+# def count_vowels (string)
+#   result = []
+#   string.each_char do |letter|
+#     if ["a", "e", "i", "o", "u"].include?(letter)
+#       result.push(letter)
+#     end
+#   end
+#   return result
+# end
+
+# puts count_vowels("The quick brown fox")
+
+# Single Line Solution
+def count_vowels (string)
+  return string.each_char.select { |letter| letter if ["a", "e", "i", "o", "u"].include?(letter) }
 end
+
+puts count_vowels("The quick brown fox")
