@@ -27,8 +27,20 @@
 # puts count_vowels("The quick brown fox")
 
 # Single Line Solution
-def count_vowels (string)
-  return string.downcase.each_char.select { |letter| letter if ["a", "e", "i", "o", "u"].include?(letter) }
+def vowels (string)
+  return string.each_char.select { |letter| letter if ["a", "A", "e", "E", "i", "I", "o", "O", "u", "U"].include?(letter) }
 end
 
-puts count_vowels("The quick brown fox")
+# puts vowels("The quick brown fox")
+
+require "test/unit"
+
+class LargestNumberTest < Test::Unit::TestCase
+  def test_vowels
+    assert_equal(["e","u","i","o","o"], vowels("The quick brown fox"))
+    assert_equal(["e","o","o"], vowels("Hello World"))
+  end
+  def test_vowels_casing
+    assert_equal(["A","e","E"], vowels("cAse tEst"))
+  end
+end
