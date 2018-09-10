@@ -28,7 +28,7 @@
 
 # Single Line Solution
 def count_vowels (string)
-  return string.each_char.select { |letter| letter if ["a", "e", "i", "o", "u"].include?(letter) }
+  return string.downcase.each_char.select { |letter| letter if ["a", "e", "i", "o", "u"].include?(letter) }
 end
 
 puts count_vowels("The quick brown fox")
