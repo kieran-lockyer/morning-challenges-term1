@@ -27,8 +27,12 @@
 # puts count_vowels("The quick brown fox")
 
 # Single Line Solution
+# def vowels (string)
+#   return string.each_char.select { |letter| letter if ["a", "A", "e", "E", "i", "I", "o", "O", "u", "U"].include?(letter) }
+# end
+
 def vowels (string)
-  return string.each_char.select { |letter| letter if ["a", "A", "e", "E", "i", "I", "o", "O", "u", "U"].include?(letter) }
+  return string.scan(/[aeiou]/i)
 end
 
 # puts vowels("The quick brown fox")
