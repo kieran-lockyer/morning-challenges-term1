@@ -13,7 +13,7 @@
 # Example:
 # in_array("HeLLo", ["hi", "howdy", "HeLLo"], true) should return true
 # in_array("DrAkE", ["jayz", "kanye", "drake"], false) should return true
-# in_array("DrAkE", ["jayz", "kanye", "yachty"], false) should return flse
+# in_array("DrAkE", ["jayz", "kanye", "yachty"], false) should return false
 #
 # Check your solution by running the tests:
 # ruby tests/08_in_array_advanced_test.rb
@@ -21,5 +21,15 @@
 
 def in_array_advanced (needle, haystack, strict)
   # Your code here
-  
+  for item in haystack
+    if item.downcase == needle.downcase && !strict || item == needle && strict
+      return true
+    end
+  end
+  return false
 end
+
+
+puts in_array_advanced("HeLLo", ["hi", "howdy", "HeLLo"], true)
+puts in_array_advanced("DrAkE", ["jayz", "kanye", "drake"], false)
+puts in_array_advanced("DrAkE", ["jayz", "kanye", "yachty"], false)
