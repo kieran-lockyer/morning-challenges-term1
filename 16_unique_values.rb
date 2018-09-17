@@ -18,6 +18,39 @@
 # ruby tests/09_unique_test.rb
 #
 
-def unique (mylist)
-  # Your code here
-end
+# def unique (mylist)
+#   result = []
+#   for item in mylist
+#     unless result.include?(item)
+#       result.push(item)
+#     end
+#   end
+#   return result
+# end
+
+# def unique (mylist)
+#   result = []
+#   for item in mylist
+#     found = false
+#     for thing in result
+#       if thing == item
+#         found = true
+#       end
+#     end
+#     unless found
+#       result.push(item)
+#     end
+#   end
+#   return result
+# end
+
+# def unique (mylist)
+#   result = {}
+#   for item in mylist
+#     result[item] = 1 + (result[item] || 0)
+#   end
+#   return result.keys
+# end
+
+puts unique([1,2,3,3])
+puts unique(["tom", "tom", "tom"])
