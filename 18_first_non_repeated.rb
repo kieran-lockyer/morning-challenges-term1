@@ -30,7 +30,43 @@
 # ruby tests/13_first_non_repeated_test.rb
 #
 
+# def firstNonRepeat (string)
+#   puts "non deleter"
+#   steps = 0
+#   string.each_char { |char|
+#     steps += 1
+#     if string.count(char) == 1
+#       steps += 1
+#       puts steps
+#       return char
+#     end
+#   }
+#   steps += 1
+#   puts steps
+#   return false
+# end
+
 def firstNonRepeat (string)
-  # Your code here
-  # Whiteboard first!
+  puts "deleter"
+  steps = 1
+  string_array = string.split("")
+  string_array.count.times do
+    steps += 1
+    if string_array.count(string_array[0]) == 1
+      steps += 1
+      puts steps 
+      return string_array[0]
+    else
+      steps += 1
+      string_array.delete(string_array[0])
+    end
+  end
+  steps += 1
+  puts steps
+  return false
 end
+
+puts firstNonRepeat('aaaabbbcccdeeefgh')
+puts firstNonRepeat('wwwhhhggge')
+puts firstNonRepeat('awwwhhhggge')
+puts firstNonRepeat('wwwhhhggg')
