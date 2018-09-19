@@ -19,5 +19,5 @@
 #
 
 def includedOnce (haystack, needle)
-  # Your code here
+  return haystack.count(needle) == 1
 end
